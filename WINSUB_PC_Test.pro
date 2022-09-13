@@ -47,4 +47,7 @@ qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
-win32: LIBS += "F:\10.qt_workspace\ESP_PC_Test\WINSUB_PC_Test\lib\libusb-1.0.a"
+win32: LIBS += -L$$PWD/lib/ -llibusb-1.0
+
+INCLUDEPATH += $$PWD/.
+DEPENDPATH += $$PWD/.
